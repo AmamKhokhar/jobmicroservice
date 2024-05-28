@@ -1,6 +1,6 @@
 package com.learner.jobms.job;
 
-import com.learner.jobms.job.dto.jobDTO;
+import com.learner.jobms.job.dto.JobDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ public class JobController {
     }
 
     @GetMapping
-    public ResponseEntity<List<jobDTO>> findAll()
+    public ResponseEntity<List<JobDTO>> findAll()
     {
         return new ResponseEntity<>(jobService.findAll(), HttpStatus.OK);
     }
@@ -31,9 +31,9 @@ public class JobController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<jobDTO> findById(@PathVariable Long id)
+    public ResponseEntity<JobDTO> findById(@PathVariable Long id)
     {
-        jobDTO jobDTO = jobService.findById(id);
+        JobDTO jobDTO = jobService.findById(id);
         if (jobDTO != null)
             return new ResponseEntity<>(jobDTO, HttpStatus.FOUND);
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

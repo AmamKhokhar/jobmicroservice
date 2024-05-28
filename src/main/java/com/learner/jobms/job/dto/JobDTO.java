@@ -5,7 +5,7 @@ import com.learner.jobms.job.external.Review;
 
 import java.util.List;
 
-public class jobDTO {
+public class JobDTO {
 
     private Long id;
     private String title;
